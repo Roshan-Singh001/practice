@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List Files
-        uses: ls -l
+        run: ls -l
 
       - name: Run Greeting script
-        uses: bash greet.sh || echo "Error"
+        run: bash greet.sh || echo "Error"
