@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Checkout Code
-       uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      -name: List Files
-       uses: ls -l
+      - name: List Files
+        uses: ls -l
 
-      -name: Run Greeting script
-       uses: bash greet.sh || echo "Error"
+      - name: Run Greeting script
+        uses: bash greet.sh || echo "Error"
