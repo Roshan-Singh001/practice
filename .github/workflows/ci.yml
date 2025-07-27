@@ -22,18 +22,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-      - run: echo "Building the Application... ${{ github.repository }}"
+        run: echo "Building the Application... ${{ github.repository }}"
 
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Testing
-      - run: echo "Running the tests..."
+        run: echo "Running the tests..."
 
   deploy:
     runs-on: ubuntu-latest
     needs: [build, test]
     steps:
       - name: Deploy
-      - run: echo "Deploying the Application..."
-      - run: bash greet.sh || echo "Error..."
+        run: echo "Deploying the Application..."
+      - name: Greet
+        run: bash greet.sh || echo "Error..."
