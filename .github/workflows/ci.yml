@@ -9,9 +9,6 @@ on:
   schedule:
     - cron: '1 * * * *'
 
-  env:
-    STAGE: dev
-
 jobs:
   test-scripts:
     runs-on: ubuntu-latest
@@ -21,6 +18,8 @@ jobs:
         uses: actions/checkout@v4
 
   build:
+    env:
+      STAGE: Devs
     runs-on: ubuntu-latest
     steps:
       - run: echo "Building the Application... ${{ github.repository }}"
